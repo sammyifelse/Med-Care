@@ -1,0 +1,34 @@
+
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Gender</th>
+        <th>Date of Registration</th>
+        <th>Appointment status</th>
+        <th>view Details</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @clients.each do | client| %>
+        <tr>
+          <td><%=  client.Client_first_Name %></td>
+          <td><%=  client.Client_second_name %></td>
+          <td><%=  client.Gender %></td>
+          <td><%=  client.Date_of_Registration %></td>
+          <td><%=  client.Appointment_status %></td>
+          <td><%=  client.view_Details%></td>
+          <td><%= link_to 'Show',  client %></td>
+          <td><%= link_to 'Edit', edit_client_path(client)%></td>          
+          <td><%= link_to 'Delete',  client, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+        </tr> 
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+

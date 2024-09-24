@@ -1,0 +1,48 @@
+<%= form_with(model: med) do |form| %>
+  <% if med.errors.any? %>
+    <div class=" field form-group" style="color: red">
+      <h2><%= pluralize(med.errors.count, "error") %> prohibited this med from being saved:</h2>
+
+      <ul>
+        <% med.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div class=" field form-group">
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+  </div class=" field form-group">
+
+  <div class=" field form-group">
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name,class:"form-control", placeholder:"Last Name" %>
+  </div class=" field form-group">
+
+  <div class=" field form-group">
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone, class:"form-control", placeholder:"1122200"%>
+  </div class=" field form-group">
+
+  <div class=" field form-group">
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, class:"form-control", placeholder:"sammy@gmail.com" %>
+  </div class=" field form-group">
+
+  <div class=" field form-group">
+    <%= form.label :DOB, style: "display: block" %>
+    <%= form.text_field :DOB, class:"form-control" , placeholder:"00:00:0000"%>
+  </div class=" field form-group">
+
+  <div class=" field form-group">
+    <%= form.label :Adress, style: "display: block" %>
+    <%= form.text_field :Adress, class:"form-control" %>
+  </div class=" field form-group">
+
+  <br/>
+  <div class="actions">
+    <%= form.submit  class:'btn btn-secondary' %>
+  </div>
+<% end %>

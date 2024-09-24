@@ -1,0 +1,23 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @med.first_name %>
+    <%= @med.last_name %>
+  </h1>
+    <p class="lead">
+    <%= @med.email %>  | 
+    <%= @med.phone %>  |  
+    <%= @med.DOB %>    |
+    <%= @med.Adress %>
+  </p>
+  <br/>
+
+  <%= link_to 'Edit', edit_med_path(@med), class:"btn btn-secondary" %>
+
+<%= link_to 'Delete', @med, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+   
+<%= link_to 'Back', meds_path, class:"btn btn-dark" %>
+
+</div>
+
+

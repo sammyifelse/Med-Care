@@ -1,0 +1,11 @@
+<% content_for :title, "Editing Patient Details" %>
+<br/>
+<h1>Editing med</h1>
+
+<%= render "form", med: @med %>
+
+<br/>
+<div>
+  <%= link_to "Show this med", @med, class:"btn btn-secondary" %> 
+  <%= link_to "Back to meds", meds_path, class:"btn btn-dark" %>
+</div>

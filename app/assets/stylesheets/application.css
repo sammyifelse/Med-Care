@@ -1,0 +1,35 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* app/assets/stylesheets/application.css or application.scss */
+
+.registration-background {
+    background-image: url('background.jpg'); /* Make sure the image is in the assets/images folder */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    position: relative; /* Create a positioning context for child elements */
+    padding: 20px; /* Add padding to the content */
+    min-height: 100vh; /* Ensures the background covers the full height */
+  }
+  
+  .container {
+    position: relative; /* Ensure content is above the background */
+    background-color: rgba(255, 255, 255, 0.8); /* Add a white background with some transparency */
+    padding: 30px; /* Padding for the container */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 20px; /* Optional: adds some space above the container */
+  }
+  

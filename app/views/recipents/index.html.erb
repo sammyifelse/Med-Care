@@ -1,0 +1,34 @@
+<h1>Registered Patients</h1>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Date of Registration</th>
+        <th>Appointment status</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @recipents.each do |recipent| %>
+        <tr>
+          
+          <td><%= recipent.Name %></td>
+          <td><%= recipent.Age %></td>
+          <td><%= recipent.Gender %></td>
+          <td><%= recipent.Date_Of_registration %></td>
+          <td><%= recipent.Appointment_Status%></td>
+          <td><%= recipent.Details%></td>
+          <td><%= link_to 'Show', recipent %></td>
+          <td><%= link_to 'Edit', edit_recipent_path(recipent)%></td>
+          <td><%= link_to 'Delete', recipent, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+        </tr> 
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New recipent', new_recipent_path, class:"btn btn-secondary" %>

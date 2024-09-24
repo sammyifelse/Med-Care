@@ -1,0 +1,2 @@
+class Pat < ApplicationRecord
+end

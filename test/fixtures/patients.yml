@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ID: 1
+  Patient_first_Name: MyString
+  Patient_second_name: MyString
+  Gender: MyString
+  Date_of_Registration: 1
+  Appointment_status: MyString
+  view_Details: MyString
+
+two:
+  ID: 1
+  Patient_first_Name: MyString
+  Patient_second_name: MyString
+  Gender: MyString
+  Date_of_Registration: 1
+  Appointment_status: MyString
+  view_Details: MyString

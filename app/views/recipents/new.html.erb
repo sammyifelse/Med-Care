@@ -1,0 +1,12 @@
+<% content_for :title, "New recipent" %>
+
+<h1>New recipent</h1>
+
+
+<%= render "form", recipent: @recipent %>
+
+<br>
+
+<div>
+  <%= link_to "Back to recipents", recipents_path %>
+</div>

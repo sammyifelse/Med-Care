@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres # change this to your PostgreSQL username
+  password: sammy14102005 # change this to your PostgreSQL password
+  host: localhost
+
+development:
+  <<: *default
+  database: medi_care_development
+
+test:
+  <<: *default
+  database: medi_care_test
+
+production:
+  <<: *default
+  database: medi_care
+  username: postgres
+  password: sammy14102005

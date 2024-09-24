@@ -1,0 +1,92 @@
+<h1>Meds List</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Second Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Date of Birth</th>
+      <th>Address</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meds.each do |med| %>
+      <tr>
+        <td><%= med.first_name %></td>
+        <td><%= med.last_name %></td>
+        <td><%= med.email %></td>
+        <td><%= med.phone %></td>
+        <td><%= med.DOB %></td>
+        <td><%= med.Adress %></td>
+        <td><%= link_to 'Show', med %></td>
+        <td><%= link_to 'Edit', edit_med_path(med) %></td>
+        <td><%= link_to 'Delete', med, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+      </tr> 
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Med', new_med_path, class: "btn btn-secondary" %>
+
+<!-- Add the chart section below the table -->
+<h1>Daily Users Count</h1>
+<canvas id="usersChart" width="400" height="200"></canvas>
+
+<!-- Include Chart.js library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Fetch and display the chart -->
+<script>
+  fetch('/meds/daily_count.json')  // Ensure you use the .json extension to get the JSON response
+    .then(response => response.json())
+    .then(data => {
+      const labels = Object.keys(data);
+      const values = Object.values(data);
+
+      const ctx = document.getElementById('usersChart').getContext('2d');
+      const usersChart = new Chart(ctx, {
+        type: 'line', // Change to 'bar' if you prefer
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Number of Users',
+            data: values,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2,
+            fill: true,
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'User Count'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Date'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+            }
+          }
+        }
+      });
+    })
+    .catch(error => console.error('Error fetching daily count:', error)); // Error handling
+</script>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @recipent %>
+
+<div>
+  <%= link_to "Edit this recipent", edit_recipent_path(@recipent) %> |
+  <%= link_to "Back to recipents", recipents_path %>
+
+  <%= button_to "Destroy this recipent", @recipent, method: :delete %>
+</div>
